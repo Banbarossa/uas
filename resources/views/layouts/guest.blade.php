@@ -14,16 +14,22 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <a href="/" wire:navigate>
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
+    <body class="font-sans antialiased text-gray-900">
+        <div class="flex items-start bg-gray-100 sm:justify-center">
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
+            <div class="relative w-full min-h-screen bg-white sm:max-w-md">
+                <div class="flex gap-3 px-5 pt-8 pb-32 bg-red-900">
+                    <a href="/" class="p-1 bg-white rounded-lg bg-opacity-70 "><img src="{{asset('assets/images/logo.png')}}" class="w-10"  alt="logo"></a>
+                    <div>
+                        <h3 class="text-xs leading-none text-gray-300 font-extralight">Pesantren Imam Syafi'i</h3>
+                        @if (isset($title))
+                        <h1 class="text-2xl font-bold leading-none tracking-wide text-gray-200">{{ $title }}</h1>
+                        @endif
+                    </div>
+                </div>
+                <div class="px-5 pt-6 mb-20 -mt-24 bg-white rounded-t-3xl">
+                    {{ $slot }}
+                </div>
             </div>
         </div>
     </body>

@@ -5,8 +5,13 @@
 
     <h3 class="mt-8 mb-4 text-xl font-extrabold text-red-800">Upload Tugas</h3>
 
-    @if (session()->has('success'))
-        <x-auth-session-status :status="session()->get('success')"></x-auth-session-status>
+    @if (session()->has('error'))
+        <div class="w-full p-4 min-h-12">
+            <h3 class="text-2xl text-red-400">
+                Gagal
+            </h3>
+            <p>{{ session()->get('error') }}</p>
+        </div>
     @endif
     
 
