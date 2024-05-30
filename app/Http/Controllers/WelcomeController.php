@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -11,8 +10,8 @@ class WelcomeController extends Controller
     public function index()
     {
 
-        $setting = Setting::latest()->pluck('open_form')->first();
-        return view('welcome', compact('setting'));
+        // $setting = Setting::latest()->pluck('open_form')->first();
+        return view('welcome');
     }
 
     public function store(Request $request)
